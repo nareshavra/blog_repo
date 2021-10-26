@@ -1,0 +1,22 @@
+{%extends 'testapp/base1.html'%}
+{%block body_block%}
+<h1>wide Range of Stories</h1>
+{%if tag%}
+<h2>Posts tagged with '{{tag.name}}'</h2>
+{%endif%}
+{%for story in stories%}
+<a href="{{story.get_absolute_url}}"><h2>{{story.title}}</h2></a><br>
+{%if story.image%}
+ <img src="{{ story.image.url }}" >
+ {%endif%}
+<p id='date'> Published by {{story.author}} On {{story.created}}</p>
+<p>
+Tags:
+{%for tag in story.tags.all%}
+<a href="{%url 'post_list_by_tagname' tag.slug%}">{{tag.name}}</a>
+{%endfor%}
+</p>
+{{story.body|truncatewords:30|linebreaks}}
+{%endfor%}
+{%include 'testapp/pagination.html' with page=stories%}
+{%endblock%}

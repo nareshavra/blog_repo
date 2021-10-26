@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{%load static%}
+{%load blog_tags%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static "css/blog2.css"%}">
+    <title>{%block title_block%}{%endblock%}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse  ">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">COPE</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="/home">STORIES</a></li>
+            <li><a href="">PRODUCTS</a></li>
+            <li><a href="">SERVICES</a></li>
+
+          </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="">SIGNUP</a></li>
+            <li><a href=""> LOGIN</a></li>
+            <li><a href="">  LOGOUT</a></li>
+
+          </ul>
+
+    </div>
+
+</nav>
+<div class="content">
+{%block body_block%}
+  {%endblock%}
+</div>
+
+<div class="sidebar">
+  <h2>Cope up Here</h2>
+  <h3>Total Stories Upto Now:{%total_posts%}</h3>
+  <h4>Latest Posts:{%show_posts%}</h4>
+  <h4>Most Commented Posts:</h4>
+  {%most_commented_post as most_commented_post%}
+  {%for post in most_commented_post%}
+  <ul>
+  <li>  <a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+  </ul>
+{%endfor%}
+</div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+.content{
+  width:69%;
+  float:left;
+  font-family: inherit;
+  padding:0 0 0 30px;
+  background:#ffffe6;
+
+
+
+}
+.sidebar{
+  width:30%;
+  float:right;
+  padding: 30px;
+  font-family: inherit;
+  background:pink;
+
+
+}
+h1{
+  text-align:center;
+  font-family: inherit;
+  border-bottom: 1px solid black;
+  padding-bottom:10px;
+}
+.container{
+  background:#ff0066;
+  width: 100%;
+  font-family: inherit;
+  color: black;
+}
+.li{
+  background:#ff6600
+  color:#ff6600
+}
+.a{
+  color:#66ffff;
+}
+#date{
+  color:black;
+  font-size:12px;
+  font-style: italic;
+}
+h2{
+  text-align: justify;
+}
